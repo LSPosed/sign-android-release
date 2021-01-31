@@ -48,6 +48,8 @@ export async function signApkFile(
     const signedApkFile = apkFile.replace('.apk', '-signed.apk');
     const args = [
         'sign',
+        '--min-sdk-version', '26',
+        '--v1-signing-enabled', 'false',
         '--ks', signingKeyFile,
         '--ks-key-alias', alias,
         '--ks-pass', `pass:${keyStorePassword}`,
